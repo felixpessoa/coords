@@ -1,0 +1,7 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Corrija para ter certeza de que o fundo do corpo não interfere */
+  background-color: transparent !important; 
+  overflow: hidden; /* Evita barras de rolagem desnecessárias */
+}

@@ -1,0 +1,53 @@
+/* src/App.module.css */
+
+.appContainer {
+  /* Centraliza o modal na tela (apenas para demonstração) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background-color: #383838; */
+}
+
+.card {
+  width: 90%;
+  max-width: 400px; /* Largura máxima do modal */
+  background-color: #333333; /* Fundo do modal */
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7); 
+  padding: 15px;
+}
+
+.header {
+  color: #fff;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 1.25rem; /* Título um pouco maior */
+  border-bottom: 1px solid #444;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Espaçamento entre os blocos */
+}
+
+.closeButton {
+  /* Botão CLOSE vermelho */
+  background-color: #e54d42; /* Tom de vermelho da imagem */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 0; 
+  width: 100%; 
+  margin-top: 25px; /* Mais espaço acima */
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.closeButton:hover {
+  background-color: #c73c33;
+}
