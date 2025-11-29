@@ -30,7 +30,7 @@ export default function App() {
 
   const handleClose = () => {
     setVisible(false);
-    fetch(`http://${GetParentResourceName()}/closeNui`, {
+    fetch(`https://${GetParentResourceName()}/client:close`, {
       method: "POST",
     });
   };
@@ -66,12 +66,10 @@ export default function App() {
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      console.log("📩 NUI RECEIVED:", event.data);
 
       if (!event.data?.action) return;
 
       if (event.data.action === "open") {
-        console.log("✔ Coords recebidas:", event.data.coords);
         setRawInput(event.data.coords);
         setVisible(true);
       }

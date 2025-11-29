@@ -1,6 +1,10 @@
 -- 1. Comando de Chat para abrir o NUI
 RegisterCommand('coords', function(source, args, rawCommand)
    local playerPed = PlayerPedId()
+   local group = TriggerServerCallback('server:getGroup') -- Chama o callback do servidor para obter o grupo do jogador
+   if group ~= 'superadmin' and group ~= 'admin' and group ~= 'support'  then
+       return
+   end
    local coords = GetEntityCoords(playerPed)
    local heading = GetEntityHeading(playerPed) -- Obtém o heading (rotação/direção)
 
@@ -12,7 +16,6 @@ RegisterCommand('coords', function(source, args, rawCommand)
 
    SendNUIMessage({ action = "open", coords = rawCoordString })
 
-   print(string.format("Coordenadas enviadas para NUI: %s", rawCoordString))
 end, false)
 
 -- 3. Listener para fechar o NUI a partir do botão "CLOSE" no React (NUI)
